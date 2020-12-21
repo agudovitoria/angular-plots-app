@@ -1,0 +1,16 @@
+.accept-btn {
+  text-transform: uppercase;
+}
+
+::ng-deep.mat-dialog-container {
+  width: 480px !important;
+}
+
+mat-dialog-content {
+  margin-top: 15px;
+}
+
+i {
+  padding-top: 3px;
+  padding-right: 5px;
+}

@@ -1,0 +1,25 @@
+.table-container {
+  width: 100%;
+  height: calc(100% - 4px);
+  overflow-y: scroll;
+
+  table {
+    width: 100%;
+    max-height: 100%;
+  }
+
+  .mat-progress-bar {
+    z-index: 1000;
+  }
+
+  .progress-spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 56px);
+  }
+}
+
+::ng-deep mat-header-row  {
+  border-bottom-width: 3px !important;
+}
