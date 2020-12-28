@@ -18,6 +18,15 @@
   .main-container {
     width: 100%;
     height: calc(100% - 64px);
+    display: flex;
   }
 
+}
+
+.js-plotly-plot .plotly {
+  opacity: 1;
+}
+
+div.modebar:last-child {
+  display: none;
 }

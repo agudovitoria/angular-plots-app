@@ -70,7 +70,6 @@ export class Graph3Component implements OnInit {
           display: false
         },
         responsive: false,
-        display: true
       }
     });
   }
