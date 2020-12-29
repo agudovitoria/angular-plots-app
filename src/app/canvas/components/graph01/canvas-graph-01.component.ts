@@ -10,7 +10,7 @@ import {
     TickOptions
 } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
-import { GraphService } from '../../../core/graph.service';
+import { PlotFunction } from '../../../shared/enums/PlotType';
 
 @CanvasComponent
 @Component({
@@ -50,9 +50,9 @@ export class CanvasGraph01Component implements OnInit, OnChanges {
     maxVerticalAxeValue: number = 0;
 
     @Input() points: number;
+    @Input() plotFunction: PlotFunction;
 
-    constructor(private dataService: DataService,
-                private graphService: GraphService) {
+    constructor(private dataService: DataService) {
     }
 
     ngOnInit(): void {
@@ -60,8 +60,10 @@ export class CanvasGraph01Component implements OnInit, OnChanges {
     }
 
     ngOnChanges(changes: SimpleChanges) {
-        const values: SimpleChange = changes.points;
-        if (!values.isFirstChange()) {
+        const points: SimpleChange = changes?.points;
+        const plotFunction: SimpleChange = changes?.plotFunction;
+
+        if (!points?.isFirstChange() || !plotFunction?.isFirstChange()) {
             this.generateChart();
         }
     }
@@ -91,9 +93,9 @@ export class CanvasGraph01Component implements OnInit, OnChanges {
     }
 
     private generateChart() {
-        const graph01data = this.dataService.getSyncGeometricData(this.points, 1.1, this.graphService.graph01);
-        const graph02data = this.dataService.getSyncGeometricData(this.points, 1.2, this.graphService.graph01);
-        const graph03data = this.dataService.getSyncGeometricData(this.points, 1.3, this.graphService.graph01);
+        const graph01data = this.dataService.getSyncGeometricData(this.points, 1.1, this.plotFunction);
+        const graph02data = this.dataService.getSyncGeometricData(this.points, 1.2, this.plotFunction);
+        const graph03data = this.dataService.getSyncGeometricData(this.points, 1.3, this.plotFunction);
 
         const values = [...graph01data, ...graph02data, ...graph03data];
 

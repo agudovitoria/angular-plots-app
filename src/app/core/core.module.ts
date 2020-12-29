@@ -6,7 +6,7 @@ import { TableModule } from './components/table/table.module';
 import { ToolBarModule } from './components/tool-bar/tool-bar.module';
 import { DataService } from './data.service';
 import { InspectionScopeSelectorModule } from './components/inpection-scope-selector/inspection-scope-selector.module';
-import { GraphService } from './graph.service';
+import { PlotSelectorModule } from './components/plot-selector/plot-selector.module';
 
 @NgModule({
     imports: [
@@ -16,6 +16,7 @@ import { GraphService } from './graph.service';
         TableModule,
         ToolBarModule,
         InspectionScopeSelectorModule,
+        PlotSelectorModule
     ],
     exports: [
         AppBarModule,
@@ -24,10 +25,10 @@ import { GraphService } from './graph.service';
         TableModule,
         ToolBarModule,
         InspectionScopeSelectorModule,
+        PlotSelectorModule
     ],
     providers: [
-        DataService,
-        GraphService
+        DataService
     ]
 })
 export class CoreModule {
