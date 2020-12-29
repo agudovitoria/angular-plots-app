@@ -12,13 +12,9 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './core/core.module';
 
 import { Graph1Module } from './graph-1/graph-1.module';
-import { Graph2Module } from './graph-2/graph-2.module';
-import { Graph3Module } from './graph-3/graph-3.module';
-import { Graph4Module } from './graph-4/graph-4.module';
 import { HomeModule } from './home/home.module';
 
 import { AppComponent } from './app.component';
-import { Graph5Module } from './graph-5/graph-5.module';
 
 @NgModule({
     declarations: [
@@ -38,10 +34,6 @@ import { Graph5Module } from './graph-5/graph-5.module';
             }
         }),
         Graph1Module,
-        Graph2Module,
-        Graph3Module,
-        Graph4Module,
-        Graph5Module,
         HomeModule,
         AppRoutingModule,
         CoreModule

@@ -3,9 +3,8 @@ import { CanvasComponent } from 'angular-canvas';
 import { DataService } from '../../../core/data.service';
 import {
     ChartDataSets,
-    ChartLineOptions,
     ChartOptions,
-    ChartScales,
+    ChartType,
     GridLineOptions,
     LinearScale,
     TickOptions
@@ -30,7 +29,7 @@ import { GraphService } from '../../../core/graph.service';
     styleUrls: ['./canvas-graph-01.component.scss']
 })
 export class CanvasGraph01Component implements OnInit, OnChanges {
-    lineChartOptions: ChartLineOptions;
+    lineChartOptions: ChartOptions;
 
     lineChartColors: Color[] = [
         {
@@ -40,7 +39,7 @@ export class CanvasGraph01Component implements OnInit, OnChanges {
     ];
 
     lineChartLegend = true;
-    lineChartType = 'line';
+    lineChartType = 'line' as ChartType;
     lineChartPlugins = [];
 
     lineChartData: ChartDataSets[] = [];
@@ -88,7 +87,7 @@ export class CanvasGraph01Component implements OnInit, OnChanges {
                     } as TickOptions
                 }]
             } as LinearScale,
-        } as ChartLineOptions;
+        } as ChartOptions;
     }
 
     private generateChart() {

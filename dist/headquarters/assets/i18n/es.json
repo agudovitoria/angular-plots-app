@@ -1,0 +1,66 @@
+{
+  "appBar": {
+    "themeMenu": {
+      "other-theme": "Opción 1",
+      "base-theme": "Opción 2"
+    }
+  },
+  "leftSidenav": {
+    "title": "Lynx-View",
+    "home": "Dashboard",
+    "graph-1": "Gráfica 1",
+    "graph-2": "Gráfica 2",
+    "graph-3": "Gráfica 3",
+    "graph-4": "Gráfica 4",
+    "graph-5": "Gráfica 5",
+    "exit": "Salir"
+  },
+  "toolBar": {
+    "create": {
+      "new": "Nuevo"
+    },
+    "search": {
+      "placeholder": "Buscar"
+    }
+  },
+  "graph-1": {
+    "title": "Gráfica 1"
+  },
+  "graph-2": {
+    "title": "Gráfica 2"
+  },
+  "home": {
+    "title": "Dashboard"
+  },
+  "errors": {
+    "api": {
+      "400": {
+        "title": "Petición errónea",
+        "message": "La petición contiene sintaxis errónea o está mal formada"
+      },
+      "403": {
+        "title": "No Permitido",
+        "message": "Lo sentimos, no puedes realizar esta acción. No tienes suficientes permisos"
+      },
+      "404": {
+        "title": "No Encontrado",
+        "message": "Lo sentimos, no encontramos lo que estás buscando"
+      },
+      "422": {
+        "title": "Entidad no procesable",
+        "message": "La petición no es válida"
+      },
+      "500": {
+        "title": "Error interno servidor",
+        "message": "Se ha producido un fallo de comunicación con el servidor"
+      },
+      "default": {
+        "title": "Error de comunicación",
+        "message": "Fallo de comunicación desconocido"
+      }
+    },
+    "dialog": {
+      "acceptBtn": "Aceptar"
+    }
+  }
+}

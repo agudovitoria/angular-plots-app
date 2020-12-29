@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+.other-theme {
+  $other-primary: mat-palette($mat-light-blue);
+  $other-accent:  mat-palette($mat-amber);
+  $other-theme:   mat-light-theme($other-primary, $other-accent);
+
+  @include angular-material-theme($other-theme);
+}
