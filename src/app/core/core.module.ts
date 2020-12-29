@@ -6,6 +6,7 @@ import { TableModule } from './components/table/table.module';
 import { ToolBarModule } from './components/tool-bar/tool-bar.module';
 import { DataService } from './data.service';
 import { InspectionScopeSelectorModule } from './components/inpection-scope-selector/inspection-scope-selector.module';
+import { GraphService } from './graph.service';
 
 @NgModule({
     imports: [
@@ -25,7 +26,8 @@ import { InspectionScopeSelectorModule } from './components/inpection-scope-sele
         InspectionScopeSelectorModule,
     ],
     providers: [
-        DataService
+        DataService,
+        GraphService
     ]
 })
 export class CoreModule {

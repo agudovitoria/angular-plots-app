@@ -11,6 +11,7 @@ import {
     TickOptions
 } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
+import { GraphService } from '../../../core/graph.service';
 
 @CanvasComponent
 @Component({
@@ -24,7 +25,7 @@ import { Color, Label } from 'ng2-charts';
                 [legend]="lineChartLegend"
                 [chartType]="lineChartType"
                 [plugins]="lineChartPlugins">
-        </canvas>,
+        </canvas>
     `,
     styleUrls: ['./canvas-graph-01.component.scss']
 })
@@ -51,7 +52,8 @@ export class CanvasGraph01Component implements OnInit, OnChanges {
 
     @Input() points: number;
 
-    constructor(private dataService: DataService) {
+    constructor(private dataService: DataService,
+                private graphService: GraphService) {
     }
 
     ngOnInit(): void {
@@ -90,16 +92,14 @@ export class CanvasGraph01Component implements OnInit, OnChanges {
     }
 
     private generateChart() {
-        const graph01data = this.dataService.getSyncGeometricData(this.points, 2);
-        const graph02data = this.dataService.getSyncGeometricData(this.points, 4);
-        const graph03data = this.dataService.getSyncGeometricData(this.points, 6);
+        const graph01data = this.dataService.getSyncGeometricData(this.points, 1.1, this.graphService.graph01);
+        const graph02data = this.dataService.getSyncGeometricData(this.points, 1.2, this.graphService.graph01);
+        const graph03data = this.dataService.getSyncGeometricData(this.points, 1.3, this.graphService.graph01);
 
         const values = [...graph01data, ...graph02data, ...graph03data];
 
         this.minVerticalAxeValue = Math.min(...values);
         this.maxVerticalAxeValue = Math.max(...values);
-
-        console.log(`Min value is ${this.minVerticalAxeValue} and max value is ${this.maxVerticalAxeValue}`);
 
         this.generateChartOptions();
 

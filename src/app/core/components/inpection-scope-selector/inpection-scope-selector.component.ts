@@ -2,50 +2,44 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatSliderChange } from '@angular/material/slider';
 
 @Component({
-  selector: 'inpection-scope-selector',
-  template: `
-    <mat-card>
-      <mat-card-subtitle>Inspection scope</mat-card-subtitle>
-      <mat-card-content>
-        <mat-slider
-            fxLayout="row"
-            fxFlexAlign="center center"
-            fxFlex="1 1 auto"
-            [max]="max"
-            [min]="min"
-            [value]="value"
-            [step]="step"
-            thumbLabel="true"
-            tickInterval="2"
-            (change)="changePointsNumber($event)">
-        </mat-slider>
-      </mat-card-content>
-    </mat-card>
-  `,
-  styleUrls: ['./inpection-scope-selector.component.scss']
+    selector: 'inpection-scope-selector',
+    template: `
+        <mat-card fxFlex>
+            <mat-card-content fxFlex fxLayout="column">
+                <span>Inspection scope</span>
+                <mat-slider [max]="max"
+                            [min]="min"
+                            [value]="value"
+                            [step]="step"
+                            [tickInterval]="step"
+                            thumbLabel="true"
+                            (change)="changePointsNumber($event)">
+                </mat-slider>
+            </mat-card-content>
+        </mat-card>
+    `,
+    styleUrls: ['./inpection-scope-selector.component.scss']
 })
 export class InpectionScopeSelectorComponent {
 
-  @Input()
-  min: number = 0;
+    @Input()
+    min!: number;
 
-  @Input()
-  max: number = 10;
+    @Input()
+    max!: number;
 
-  @Input()
-  value: number = 5;
+    @Input()
+    value!: number;
 
-  @Input()
-  step: number = 1;
+    @Input()
+    step!: number;
 
 
+    @Output()
+    onValueChanges: EventEmitter<number> = new EventEmitter<number>();
 
-  @Output()
-  onValueChanges: EventEmitter<number> = new EventEmitter<number>();
-
-  changePointsNumber({ value }: MatSliderChange) {
-    console.log(`event: ${value}`);
-    this.onValueChanges.emit(value);
-  }
+    changePointsNumber({ value }: MatSliderChange) {
+        this.onValueChanges.emit(value);
+    }
 
 }
