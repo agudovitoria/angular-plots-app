@@ -1,3 +1,3 @@
-# chemistrix-graphs-demo-app
+# angular-plots-app
 
-Proof Of Concept width data graphs dashboard for Chemistrix company
+Proof Of Concept with data graphs dashboard
